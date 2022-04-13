@@ -62,17 +62,11 @@ class Graph(object):
                 print(node)
 
             else:
-                print('  ' * ind, node)
+                print('-' * ind + node)
             for child in self.get_children(node):
                 self.go(child, ind+1)
         else:
-            print('  ' * ind, node)
-
-    def items(self):
-        return dict(self._graph).items()
-
-    def get_dict(self):
-        return self._graph
+            print('-' * ind + node)
 
     def has_children(self, node):
         return node in self._graph
